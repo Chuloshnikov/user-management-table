@@ -55,6 +55,20 @@ const UserTable: React.FC = () => {
                 variant="outlined"
                 size="small"
                 onChange={handleNameSearch}
+                sx={{
+                  input: { color: 'black' }, 
+                  '.MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'black', 
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'black', 
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'black', 
+                    },
+                  },
+                }}
               />
             </TableCell>
             <TableCell>
@@ -63,6 +77,20 @@ const UserTable: React.FC = () => {
                 variant="outlined"
                 size="small"
                 onChange={handleUsernameSearch}
+                sx={{
+                  input: { color: 'black' }, 
+                  '.MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'black', 
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'black', 
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'black', 
+                    },
+                  },
+                }}
               />
             </TableCell>
             <TableCell>
@@ -71,6 +99,20 @@ const UserTable: React.FC = () => {
                 variant="outlined"
                 size="small"
                 onChange={handleEmailSearch}
+                sx={{
+                    input: { color: 'black' }, 
+                    '.MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: 'black', 
+                      },
+                      '&:hover fieldset': {
+                        borderColor: 'black', 
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: 'black', 
+                      },
+                    },
+                  }}
               />
             </TableCell>
             <TableCell>
@@ -79,6 +121,20 @@ const UserTable: React.FC = () => {
                 variant="outlined"
                 size="small"
                 onChange={handlePhoneSearch}
+                sx={{
+                  input: { color: 'black' }, 
+                  '.MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'black', 
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'black', 
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'black', 
+                    },
+                  },
+                }}
               />
             </TableCell>
           </TableRow>
