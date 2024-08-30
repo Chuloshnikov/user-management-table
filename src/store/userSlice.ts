@@ -1,15 +1,20 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { RootState } from './store';
 import { users } from '../lib/data';
 
 interface UserState {
   users: typeof users;
-  searchTerm: string;
+  nameSearchTerm: string;
+  usernameSearchTerm: string;
+  emailSearchTerm: string;
+  phoneSearchTerm: string;
 }
 
 const initialState: UserState = {
   users: [],
-  searchTerm: '',
+  nameSearchTerm: '',
+  usernameSearchTerm: '',
+  emailSearchTerm: '',
+  phoneSearchTerm: '',
 };
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
@@ -20,8 +25,17 @@ const userSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    setSearchTerm(state, action: PayloadAction<string>) {
-      state.searchTerm = action.payload;
+    setNameSearchTerm(state, action: PayloadAction<string>) {
+      state.nameSearchTerm = action.payload;
+    },
+    setUsernameSearchTerm(state, action: PayloadAction<string>) {
+      state.usernameSearchTerm = action.payload;
+    },
+    setEmailSearchTerm(state, action: PayloadAction<string>) {
+      state.emailSearchTerm = action.payload;
+    },
+    setPhoneSearchTerm(state, action: PayloadAction<string>) {
+      state.phoneSearchTerm = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -31,11 +45,19 @@ const userSlice = createSlice({
   },
 });
 
-export const { setSearchTerm } = userSlice.actions;
+export const {
+  setNameSearchTerm,
+  setUsernameSearchTerm,
+  setEmailSearchTerm,
+  setPhoneSearchTerm,
+} = userSlice.actions;
 
 export const selectFilteredUsers = (state: RootState) =>
   state.users.users.filter((user) =>
-    user.name.toLowerCase().includes(state.users.searchTerm.toLowerCase())
+    user.name.toLowerCase().includes(state.users.nameSearchTerm.toLowerCase()) &&
+    user.username.toLowerCase().includes(state.users.usernameSearchTerm.toLowerCase()) &&
+    user.email.toLowerCase().includes(state.users.emailSearchTerm.toLowerCase()) &&
+    user.phone.toLowerCase().includes(state.users.phoneSearchTerm.toLowerCase())
   );
 
 export default userSlice.reducer;
