@@ -1,11 +1,27 @@
-"use client"
+"use client";
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUsers, selectFilteredUsers, setNameSearchTerm, setUsernameSearchTerm, setEmailSearchTerm, setPhoneSearchTerm } from '../store/userSlice';
-import { TextField, Table, TableBody, TableCell, TableHead, TableRow, Container } from '@mui/material';
+import { AppDispatch } from '../store'; // Import AppDispatch
+import {
+  fetchUsers,
+  selectFilteredUsers,
+  setNameSearchTerm,
+  setUsernameSearchTerm,
+  setEmailSearchTerm,
+  setPhoneSearchTerm,
+} from '../store/userSlice';
+import {
+  TextField,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Container,
+} from '@mui/material';
 
 const UserTable: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch(); 
   const users = useSelector(selectFilteredUsers);
 
   useEffect(() => {
@@ -74,7 +90,7 @@ const UserTable: React.FC = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {users.map((user) => (
+          {users.map((user: any) => (
             <TableRow key={user.id}>
               <TableCell>{user.name}</TableCell>
               <TableCell>{user.username}</TableCell>
