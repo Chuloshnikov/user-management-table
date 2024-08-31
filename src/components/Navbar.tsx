@@ -7,7 +7,7 @@ const Navbar = () => {
         <div>
           <div className='px-5 py-2'>
             <h2 className='text-2xl font-bold text-[#5FA7EE]'>SEPOLTURE</h2>
-            <p className='text-xs -mt-2'>Admin panel</p>
+            <p className='text-xs -mt-2.5'>Admin panel</p>
           </div>
           <nav className='px-5 py-10'>
               <ul className='flex flex-col gap-4'>
