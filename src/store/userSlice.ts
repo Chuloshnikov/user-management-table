@@ -1,8 +1,17 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { users } from '../lib/data';
+import { RootState } from '../store';
+
+interface User {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  phone: string;
+}
 
 interface UserState {
-  users: typeof users;
+  users: User[];
   nameSearchTerm: string;
   usernameSearchTerm: string;
   emailSearchTerm: string;
@@ -17,7 +26,7 @@ const initialState: UserState = {
   phoneSearchTerm: '',
 };
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+export const fetchUsers = createAsyncThunk<User[]>('users/fetchUsers', async () => {
   return users;
 });
 
