@@ -11,7 +11,7 @@ const Navbar = () => {
           </div>
           <nav className='px-5 py-10'>
               <ul className='flex flex-col gap-4'>
-                  <li><Link className="hover:text-[#5FA7EE] duration-300" href={"/"}>users</Link></li>
+                  <li><Link className={`hover:text-[#5FA7EE] duration-300`} href={"/"}>users</Link></li>
                   <li><Link className="hover:text-[#5FA7EE] duration-300" href={"/dashboard"}>dashboard</Link></li>
                   <li><Link className="hover:text-[#5FA7EE] duration-300" href={"/orders"}>orders</Link></li>
                   <li><Link className="hover:text-[#5FA7EE] duration-300" href={"/settings"}>settings</Link></li>
